@@ -2,7 +2,7 @@
 <rss version="2.0">
   <channel>
     <title>Include Brain</title>
-    <link>http://andagr.github.io/Firm</link>
+    <link>http://andagr.github.io/IncludeBrain</link>
     <description>Ramblings of a developer</description>
     <language>en-us</language>
     <category>Software Development</category>
@@ -10,7 +10,7 @@
     <webMaster>andreas@includebrain.com</webMaster>
     <item>
       <title>Another Porter Stemmer in F#</title>
-      <link>http://andagr.github.io/Firm/blog/post/another-porter-stemmer-in-fsharp</link>
+      <link>http://andagr.github.io/IncludeBrain/blog/post/another-porter-stemmer-in-fsharp</link>
       <description>&lt;h2&gt;Stemming&lt;/h2&gt;
 
 &lt;p&gt;Stemming is the process for reducing words to their root form, e.g. both "acceptable" and "acceptance" might be reduced to "accept".&lt;/p&gt;
@@ -212,8 +212,8 @@ let stem word =
     </item>
     <item>
       <title>Helping Bitizens to Better Jobs in Tiny Tower Using F#</title>
-      <link>http://andagr.github.io/Firm/blog/post/helping-bitizens-to-better-jobs-in-tiny-tower-using-fsharp</link>
-      <description>&lt;p&gt;&lt;img src="http://andagr.github.io/Firm/blog/post/helping-bitizens-to-better-jobs-in-tiny-tower-using-fsharp/img/650px-Banner.png" alt="Tiny Tower" /&gt;&lt;/p&gt;
+      <link>http://andagr.github.io/IncludeBrain/blog/post/helping-bitizens-to-better-jobs-in-tiny-tower-using-fsharp</link>
+      <description>&lt;p&gt;&lt;img src="http://andagr.github.io/IncludeBrain/blog/post/helping-bitizens-to-better-jobs-in-tiny-tower-using-fsharp/img/650px-Banner.png" alt="Tiny Tower" /&gt;&lt;/p&gt;
 
 &lt;p&gt;From the &lt;a href="http://tinytower.wikia.com/wiki/Tiny_Tower_Wiki"&gt;Tiny Tower wiki&lt;/a&gt;:&lt;/p&gt;
 
@@ -406,14 +406,14 @@ let main argv =
     </item>
     <item>
       <title>Learning F#</title>
-      <link>http://andagr.github.io/Firm/blog/post/learning-fsharp</link>
+      <link>http://andagr.github.io/IncludeBrain/blog/post/learning-fsharp</link>
       <description>&lt;p&gt;My main programming language when I was studying was, as for many other developers, Java. There were other languages too, but Java was the main tool for learning basic software development. Later in my work I came in contact with C#, and since then I have come to prefer it over Java due to its features and ability to quickly evolve, and the extensive .NET API.&lt;/p&gt;
 
 &lt;p&gt;The basic aspect of C# is the object orientation which works similarly as in Java, although there are &lt;a href="http://stackoverflow.com/questions/1882692/c-sharp-constructor-execution-order"&gt;subtle differences&lt;/a&gt;. However, what makes it a bit more exciting are other features such as dynamic, async/await and functional. The latter is something that has gained quite a lot of popularity, although &lt;a href="http://en.wikipedia.org/wiki/Functional_programming#History"&gt;it's not a new paradigm&lt;/a&gt;. It was this aspect of C#, and in practice LINQ, that got me curious about functional programming in general.&lt;/p&gt;
 
 &lt;p&gt;I decided to take a closer look at F#, partly because it's a member of the .NET platform but also because it seems to be developed from a pragmatic point of view. It is also very exciting that it is open source, seems to have a friendly community, and has support on several different platforms. Also noteworthy, at the time of writing F# has risen from position 45 to 16 in the &lt;a href="http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html"&gt;TIOBE index&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://andagr.github.io/Firm/blog/post/learning-fsharp/img/fsharp128.png" alt="F# Logo" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://andagr.github.io/IncludeBrain/blog/post/learning-fsharp/img/fsharp128.png" alt="F# Logo" /&gt;&lt;/p&gt;
 
 &lt;p&gt;I am still very much a beginner, but in the spirit of recording things here are the resources I have used so far.&lt;/p&gt;
 
@@ -446,7 +446,7 @@ let main argv =
 
 &lt;p&gt;There are several &lt;a href="http://fsharp.org/about/learning.html"&gt;book suggestions on fsharp.org&lt;/a&gt;, and the one I got and am reading is &lt;a href="http://www2.imm.dtu.dk/~mire/FSharpBook/"&gt;Functional Programming using F#&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://andagr.github.io/Firm/blog/post/learning-fsharp/img/9781107684065_200_functional-programming-using-f_haftad.jpg" alt="Functional Programming using F#" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://andagr.github.io/IncludeBrain/blog/post/learning-fsharp/img/9781107684065_200_functional-programming-using-f_haftad.jpg" alt="Functional Programming using F#" /&gt;&lt;/p&gt;
 
 &lt;h2&gt;Videos&lt;/h2&gt;
 
@@ -471,7 +471,7 @@ let main argv =
     </item>
     <item>
       <title>Configuring Log4Net programmatically</title>
-      <link>http://andagr.github.io/Firm/blog/post/configuring-log4net-programmatically</link>
+      <link>http://andagr.github.io/IncludeBrain/blog/post/configuring-log4net-programmatically</link>
       <description>&lt;p&gt;&lt;a href="http://logging.apache.org/log4net/"&gt;Log4Net&lt;/a&gt; is a widely used logging framework by Apache, who ported it from log4j, also made by Apache. It can be configured for a number of different things, such as where to output the logs and how to format the log text.&lt;/p&gt;
 
 &lt;p&gt;Using Log4Net is quite easy once the configuration has been completed, and here is a common way of doing just that (using a file appender as an example).&lt;/p&gt;
@@ -556,7 +556,7 @@ let main argv =
     </item>
     <item>
       <title>Hello</title>
-      <link>http://andagr.github.io/Firm/blog/post/hello</link>
+      <link>http://andagr.github.io/IncludeBrain/blog/post/hello</link>
       <description>&lt;p&gt;My name is Andreas Ågren and I'm a developer from Malmö in south Sweden, where I live with my wife and son.
 I work at &lt;a href="http://www.apptus.com"&gt;Apptus Technologies AB&lt;/a&gt; with integration. My day-to-day technologies are C#, SQL Server, ASP.NET, Java and Javascript.
 I am very passionate about software development and I love learning, reading about and practicing it.&lt;/p&gt;
@@ -569,9 +569,9 @@ some people really should &lt;code&gt;#include &amp;lt;brain.h&amp;gt;&lt;/code&
 
 &lt;p&gt;Being perfectly reasonable, my brother printed this on a cap:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://andagr.github.io/Firm/blog/post/hello/img/include-brain-cap.jpg" alt="Include brain cap" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://andagr.github.io/IncludeBrain/blog/post/hello/img/include-brain-cap.jpg" alt="Include brain cap" /&gt;&lt;/p&gt;
 
-&lt;p&gt;If you would like to get in touch with me, there are a number of options on the &lt;a href="http://andagr.github.io/Firm/blog/about"&gt;About&lt;/a&gt; page.&lt;/p&gt;
+&lt;p&gt;If you would like to get in touch with me, there are a number of options on the &lt;a href="http://andagr.github.io/IncludeBrain/blog/about"&gt;About&lt;/a&gt; page.&lt;/p&gt;
 
 &lt;p&gt;I hope you will enjoy my writings!&lt;/p&gt;
 </description>

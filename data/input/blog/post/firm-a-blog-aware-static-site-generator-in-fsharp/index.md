@@ -15,12 +15,12 @@ So why the name "Firm"? It's really simple, I looked for a word that was somewha
 (you know, because F#).
 
 The current status is that it works, but is not very lean. There are still quite a few manual steps that one has to do to set it up and use it,
-the plan is to fix that bit by bit by using [FAKE](https://github.com/fsharp/FAKE). If you would like to help out you are very welcome to
+the plan is to automate it bit by bit by using [FAKE](https://github.com/fsharp/FAKE). If you would like to help out you are very welcome to
 try it and if you are so inclined, add an issue or submit at pull request.
 
 Using a static blog-/site generator is just great, I have full control of how the pages are created, they are served with lightning
 speed and there's no worries about if the backend is up. Not to mention the flashback to the late 90's when I first started
-working with the web and all I did was put together pieces of HTML. Until I found out about PHP, which that was pretty awesome back then.
+working with the web by putting together pieces of HTML. Until I found out about PHP...
 
 You can find the Firm repository, with instructions on how to get it up and running, at https://github.com/andagr/Firm. If you
 have any questions then feel free to post a comment here, or drop me an [email](mailto:andreas@includebrain.com).

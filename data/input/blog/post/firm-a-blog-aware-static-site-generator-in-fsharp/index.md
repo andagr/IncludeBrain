@@ -1,4 +1,4 @@
-When I created this blog in 2013 I used ASP.NET MVC with SQL Server in the backend, it was a very classical solution.
+When I created this blog in 2013 I used ASP.NET MVC with SQL Server in the backend, it was a very classic solution.
 However it did feel a bit weird to serve dynamically generated pages for someting that had no dynamic content!
 I mean, the only interactive part on this site is the comments, and they are handled by Disqus.
 I was aware of static blog generators such as [Jekyll](http://jekyllrb.com/) and [Octopress](http://octopress.org/).
@@ -22,7 +22,8 @@ Using a static blog-/site generator is just great, I have full control of how th
 speed and there's no worries about if the backend is up. Not to mention the flashback to the late 90's when I first started
 working with the web by putting together pieces of HTML. Until I found out about PHP...
 
-You can find the Firm repository, with instructions on how to get it up and running, at https://github.com/andagr/Firm. If you
-have any questions then feel free to post a comment here, or drop me an [email](mailto:andreas@includebrain.com).
+You can find the Firm repository, with instructions on how to get it up and running, at
+[https://github.com/andagr/Firm](https://github.com/andagr/Firm). If you have any questions then feel free to post a comment here,
+or drop me an [email](mailto:andreas@includebrain.com).
 
 Happy blogging! (Whichever platform you choose) 

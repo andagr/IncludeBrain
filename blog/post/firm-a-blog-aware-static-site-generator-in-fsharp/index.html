@@ -49,68 +49,58 @@
                 
 
 
-    <div class="post" data-tags='blog,static,generator,f#'>
-        <h1 class="post-title">
-            <a href='http://includebrain.com/blog/post/firm-a-blog-aware-static-site-generator-in-fsharp/'>Firm, a blog-aware, static site generator in F#</a>
-            <br/>
-            <small>2015-05-30 20:36:00</small>
-        </h1>
-        <div class="comment-count"><a href='http://includebrain.com/blog/post/firm-a-blog-aware-static-site-generator-in-fsharp/#disqus_thread'>Click here to see comments</a></div>
-    </div>
-    <div class="post" data-tags='learning,stemming,f#'>
-        <h1 class="post-title">
-            <a href='http://includebrain.com/blog/post/another-porter-stemmer-in-fsharp/'>Another Porter Stemmer in F#</a>
-            <br/>
-            <small>2014-04-20 22:30:47</small>
-        </h1>
-        <div class="comment-count"><a href='http://includebrain.com/blog/post/another-porter-stemmer-in-fsharp/#disqus_thread'>Click here to see comments</a></div>
-    </div>
-    <div class="post" data-tags='f#,learning'>
-        <h1 class="post-title">
-            <a href='http://includebrain.com/blog/post/helping-bitizens-to-better-jobs-in-tiny-tower-using-fsharp/'>Helping Bitizens to Better Jobs in Tiny Tower Using F#</a>
-            <br/>
-            <small>2014-03-17 11:27:23</small>
-        </h1>
-        <div class="comment-count"><a href='http://includebrain.com/blog/post/helping-bitizens-to-better-jobs-in-tiny-tower-using-fsharp/#disqus_thread'>Click here to see comments</a></div>
-    </div>
-    <div class="post" data-tags='java,learning,functional-programming,c#,f#'>
-        <h1 class="post-title">
-            <a href='http://includebrain.com/blog/post/learning-fsharp/'>Learning F#</a>
-            <br/>
-            <small>2014-01-04 19:16:39</small>
-        </h1>
-        <div class="comment-count"><a href='http://includebrain.com/blog/post/learning-fsharp/#disqus_thread'>Click here to see comments</a></div>
-    </div>
-    <div class="post" data-tags='configuration,code,log4net,logging,xml'>
-        <h1 class="post-title">
-            <a href='http://includebrain.com/blog/post/configuring-log4net-programmatically/'>Configuring Log4Net programmatically</a>
-            <br/>
-            <small>2013-11-12 23:20:27</small>
-        </h1>
-        <div class="comment-count"><a href='http://includebrain.com/blog/post/configuring-log4net-programmatically/#disqus_thread'>Click here to see comments</a></div>
-    </div>
-    <div class="post" data-tags='blog,hello'>
-        <h1 class="post-title">
-            <a href='http://includebrain.com/blog/post/hello/'>Hello</a>
-            <br/>
-            <small>2013-07-27 21:22:35</small>
-        </h1>
-        <div class="comment-count"><a href='http://includebrain.com/blog/post/hello/#disqus_thread'>Click here to see comments</a></div>
-    </div>
+<div class="post">
+    <h1 class="post-title">Firm, a blog-aware, static site generator in F#</h1>
+    <small>2015-05-30 20:36:00</small>
+    <div class="post-content"><p>When I created this blog in 2013 I used ASP.NET MVC with SQL Server in the backend, it was a very classical solution.
+However it did feel a bit weird to serve dynamically generated pages for someting that had no dynamic content!
+I mean, the only interactive part on this site is the comments, and they are handled by Disqus.
+I was aware of static blog generators such as <a href="http://jekyllrb.com/">Jekyll</a> and <a href="http://octopress.org/">Octopress</a>.
+They seem to be somewhat common within the developer community.</p>
 
+<p>Since I'm also very interested in F#, that's what I wanted the blog generator to use. I found out about
+<a href="https://github.com/fsprojects/FsBlog">FsBlog</a>, and in the back my mind I considered trying it out once I had some free time.</p>
+
+<p>When I eventually forked it I had a bit of a hard time getting it up and running, and by now I had also created a very specific
+mental picture of how I thought this kind of project ought to do things. I wanted to explore how much work it would be to make
+my own generator, so instead I started a new project called Firm. It was a bit more work than I expected, it always is, but it was also fun.</p>
+
+<p>So why the name "Firm"? It's really simple, I looked for a word that was somewhat related to "static" and I wanted it to start with "F"
+(you know, because F#).</p>
+
+<p>The current status is that it works, but is not very lean. There are still quite a few manual steps that one has to do to set it up and use it,
+the plan is to automate it bit by bit by using <a href="https://github.com/fsharp/FAKE">FAKE</a>. If you would like to help out you are very welcome to
+try it and if you are so inclined, add an issue or submit at pull request.</p>
+
+<p>Using a static blog-/site generator is just great, I have full control of how the pages are created, they are served with lightning
+speed and there's no worries about if the backend is up. Not to mention the flashback to the late 90's when I first started
+working with the web by putting together pieces of HTML. Until I found out about PHP...</p>
+
+<p>You can find the Firm repository, with instructions on how to get it up and running, at <a href="https://github.com/andagr/Firm.">https://github.com/andagr/Firm.</a> If you
+have any questions then feel free to post a comment here, or drop me an <a href="mailto:andreas@includebrain.com">email</a>.</p>
+
+<p>Happy blogging! (Whichever platform you choose)</p>
+
+
+</div>
+</div>
+
+<div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'includebrain'; // required: replace example with your forum shortname
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function () {
-        var s = document.createElement('script');
-        s.async = true;
-        s.type = 'text/javascript';
-        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
 </script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
             </div>
             <div id="right-panel" class="col-md-4">
                 <div id="tag-cloud">

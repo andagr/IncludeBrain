@@ -218,3 +218,25 @@ div.code-wrapper {
 div#disqus_thread {
     margin-bottom: 100px;
 }
+
+@media (max-width: 768px) {
+    #topsection h1 {
+        font-size: 4.5em;
+    }
+    
+    .post-title {
+        font-size: 2.3em;
+    }
+    
+    h1 {
+        font-size: 2.1em;
+    }
+    
+    h2 {
+        font-size: 1.6em;
+    }
+    
+    h3 {
+        font-size: 1.1em;
+    }
+}

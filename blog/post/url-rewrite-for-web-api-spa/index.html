@@ -50,68 +50,50 @@
 
 
 <div class="post">
-    <h1 class="post-title">Learning F#</h1>
-    <small>2014-01-04 19:16:39</small>
-    <div class="post-content"><p>My main programming language when I was studying was, as for many other developers, Java. There were other languages too, but Java was the main tool for learning basic software development. Later in my work I came in contact with C#, and since then I have come to prefer it over Java due to its features and ability to quickly evolve, and the extensive .NET API.</p>
+    <h1 class="post-title">Url rewrite for Web API SPA</h1>
+    <small>2015-11-23 20:56:00</small>
+    <div class="post-content"><img class="img-responsive" alt="HTML CSS JS" src="/blog/post/url-rewrite-for-web-api-spa/img/html-css-js.png"/>
 
-<p>The basic aspect of C# is the object orientation which works similarly as in Java, although there are <a href="http://stackoverflow.com/questions/1882692/c-sharp-constructor-execution-order">subtle differences</a>. However, what makes it a bit more exciting are other features such as dynamic, async/await and functional. The latter is something that has gained quite a lot of popularity, although <a href="http://en.wikipedia.org/wiki/Functional_programming#History">it's not a new paradigm</a>. It was this aspect of C#, and in practice LINQ, that got me curious about functional programming in general.</p>
+<p>I just wanted to share this thing I had to search a while for.</p>
 
-<p>I decided to take a closer look at F#, partly because it's a member of the .NET platform but also because it seems to be developed from a pragmatic point of view. It is also very exciting that it is open source, seems to have a friendly community, and has support on several different platforms. Also noteworthy, at the time of writing F# has risen from position 45 to 16 in the <a href="http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html">TIOBE index</a>.</p>
+<p>When making a SPA (Single Page Application) I divided my website into two parts: One part Asp.net web api and one part static html/js/css, as one usually does. However, I also wanted to use the html5 history api with no hash in the url. For example, imagine that <code>http://example.com/</code> returns a list of users, and when clicking on "Dolly Parton" we change the url to <code>http://example.com/users/dolly-parton</code>, an ajax request is made to a back-end api, which returns a JSON-string, which is rendered in the view. Now imagine that we bookmark that url and then open it later, what will happen? Well, the server will receive a request for that path and e.g. try to find a directory /users/dolly-parton with an index.html in it, none is found so 404 you get.</p>
 
-<p><img src="http://includebrain.com/blog/post/learning-fsharp/img/fsharp128.png" alt="F# Logo" /></p>
+<p>In other words, we need to make sure that most incoming paths are routed to our spa index.html so that <em>it</em> can handle the path and show the right view. We also need to still be able to call our back-end api, and we also need to be able to fetch our static html-templates, js- and css-files. In my case I have my api at <code>/api</code> and all my static files in a directory <code>/public</code>.</p>
 
-<p>I am still very much a beginner, but in the spirit of recording things here are the resources I have used so far.</p>
+<p>I'm sure there are many ways to do this, but since I'm running an Asp.net Web API project I opted for IIS configuration in my web.config. Specifically this:</p>
 
-<h2>General</h2>
+<table class="pre"><tr><td class="lines"><pre class="fssnip">
+<span class="l"> 1: </span>
+<span class="l"> 2: </span>
+<span class="l"> 3: </span>
+<span class="l"> 4: </span>
+<span class="l"> 5: </span>
+<span class="l"> 6: </span>
+<span class="l"> 7: </span>
+<span class="l"> 8: </span>
+<span class="l"> 9: </span>
+<span class="l">10: </span>
+</pre>
+</td>
+<td class="snippet"><pre class="fssnip">
+<span class="o">&lt;</span><span class="i">system</span><span class="o">.</span><span class="i">webServer</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="i">rewrite</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="i">rules</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="i">rule</span> <span class="i">name</span><span class="o">=</span><span class="s">&quot;RewriteUnknownToIndex&quot;</span> <span class="i">patternSyntax</span><span class="o">=</span><span class="s">&quot;ECMAScript&quot;</span> <span class="i">stopProcessing</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="k">match</span> <span class="i">url</span><span class="o">=</span><span class="s">&quot;^(public|api)/.*&quot;</span> <span class="i">negate</span><span class="o">=</span><span class="s">&quot;true&quot;</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="i">action</span> <span class="k">type</span><span class="o">=</span><span class="s">&quot;Rewrite&quot;</span> <span class="i">url</span><span class="o">=</span><span class="s">&quot;/public/index.html&quot;</span><span class="o">/&gt;</span>
+      <span class="o">&lt;/</span><span class="i">rule</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="i">rules</span><span class="o">&gt;</span>
+  <span class="o">&lt;/</span><span class="i">rewrite</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="i">system</span><span class="o">.</span><span class="i">webServer</span><span class="o">&gt;</span>
+</pre>
+</td>
+</tr>
+</table>
 
-<ul>
-<li><a href="http://fsharp.org">fsharp.org</a> - A hub for information about F# and the first place you should look.</li>
-<li><a href="http://www.tryfsharp.org">tryfsharp.org</a> - This site is amazing, it has a tutorial including an editor (with intellisense!) that works by using Silverlight to host the F# compiler in the browser.</li>
-<li><a href="http://fsharpforfunandprofit.com">fsharpforfunandprofit.com</a> - A general site for learning F# that contains a lot of information in the form of tutorials and posts.</li>
-<li><a href="http://msdn.microsoft.com/en-us/library/dd233181.aspx">F# Language Reference</a> - F# on MSDN.</li>
-<li><a href="http://learnxinyminutes.com/docs/fsharp/">Learn X in Y minutes, where X = F#</a> - To the point information about F# in the form of code examples.</li>
-</ul>
+<p>This rule simply says: If the path does <em>not</em> start with "public" or "api", then return <code>/public/index.html</code>.</p>
 
-<h2>Blogs</h2>
-
-<p>These are blogs, related to F#, that I try to read as often as possible, in no particular order.</p>
-
-<ul>
-<li><a href="http://rachelree.se/">Rachel Reese</a></li>
-<li><a href="http://www.devjoy.com/">Devjoy</a></li>
-<li><a href="http://blogs.msdn.com/b/fsharpteam/">Visual Studio F# Team</a></li>
-<li><a href="http://tomasp.net/">Tomas Petricek</a></li>
-<li><a href="http://sergeytihon.wordpress.com/">Sergey Tihon</a></li>
-<li><a href="http://blog.mavnn.co.uk/">Michael Newton</a></li>
-<li><a href="http://www.kiteason.com/">Kit Eason</a></li>
-<li><a href="http://blogs.msdn.com/b/dsyme/">Don Syme</a></li>
-</ul>
-
-<h2>Books</h2>
-
-<p>There are several <a href="http://fsharp.org/about/learning.html">book suggestions on fsharp.org</a>, and the one I got and am reading is <a href="http://www2.imm.dtu.dk/~mire/FSharpBook/">Functional Programming using F#</a>.</p>
-
-<p><img src="http://includebrain.com/blog/post/learning-fsharp/img/9781107684065_200_functional-programming-using-f_haftad.jpg" alt="Functional Programming using F#" /></p>
-
-<h2>Videos</h2>
-
-<p>When I was at <a href="http://oredev.org">Öredev</a> I attended a couple of sessions on F#.</p>
-
-<h3>F# for C# developers by Phil Trelford</h3>
-
-<iframe src="//player.vimeo.com/video/78908217" width="500" height="300" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-<h3>Discovering Type Providers in F# 3.0 by Rachel Reese</h3>
-
-<iframe src="//player.vimeo.com/video/79402548" width="500" height="300" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-<h2>Podcasts</h2>
-
-<p><a href="http://www.dotnetrocks.com/">The .NET Rocks</a> show has several shows where they talk about F#.</p>
-
-<h2>Practicing</h2>
-
-<p><a href="http://projecteuler.net/">Project Euler</a> is a good resource to use for practicing problem solving using programming. Other than that I have used F# to solve a problem that interested me, and there will be a separate blog post about it later. I will keep using F# wherever it feels like a good fit, because for me personally trying things out is what works best when learning something.</p>
+<p>It is an OWIN application, so there are probably some neat way to do this using the <code>Owin.IAppBuilder</code> (comments are welcome), but right now I decided to go with the IIS config, mainly for the simplicity.</p>
 
 
 </div>
@@ -136,7 +118,6 @@
             </div>
             <div id="right-panel" class="col-md-4">
                 <div id="tag-cloud">
-                        <a class="tag tag-unselected" data-postcount="1" href='http://includebrain.com/blog/archive?tag=asp.net'>asp.net</a>
                         <a class="tag tag-unselected" data-postcount="1" href='http://includebrain.com/blog/archive?tag=web%20api'>web api</a>
                         <a class="tag tag-unselected" data-postcount="1" href='http://includebrain.com/blog/archive?tag=spa'>spa</a>
                         <a class="tag tag-unselected" data-postcount="1" href='http://includebrain.com/blog/archive?tag=url'>url</a>
@@ -161,9 +142,9 @@
                 <div id="latest-posts">
                     <h3>Latest posts</h3>
                         <h4>
-                            <a href='http://includebrain.com/blog/post/url-rewrite-for-asp-net-web-api-spa/'>Url rewrite for ASP.NET Web API SPA</a>
+                            <a href='http://includebrain.com/blog/post/url-rewrite-for-web-api-spa/'>Url rewrite for Web API SPA</a>
                             <br/>
-                            <small>2015-11-23 22:28:00</small>
+                            <small>2015-11-23 20:56:00</small>
                         </h4>
                         <h4>
                             <a href='http://includebrain.com/blog/post/firm-a-blog-aware-static-site-generator-in-fsharp/'>Firm, a blog-aware, static site generator in F#</a>
